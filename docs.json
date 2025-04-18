@@ -23,8 +23,8 @@
           {
             "group": "Essentials",
             "pages": [
-              "clients/panels/index",
               "clients/segments/index",
+              "clients/panels/index",
               "clients/questions/index",
               "clients/surveys/index",
               "clients/studies/index"
