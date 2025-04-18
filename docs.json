@@ -23,8 +23,8 @@
           {
             "group": "Essentials",
             "pages": [
-              "clients/segments/index",
               "clients/panels/index",
+              "clients/segments/index",
               "clients/questions/index",
               "clients/surveys/index",
               "clients/studies/index"
@@ -44,8 +44,8 @@
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/light.png",
+    "dark": "/logo/dark.png"
   },
   "navbar": {
     "links": [
