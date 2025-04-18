@@ -1,6 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "name": "Panel Pro Documentation",
+  "theme": "willow",
   "colors": {
     "primary": "#64748b",
     "light": "#cbd5e1",
