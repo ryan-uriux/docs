@@ -11,6 +11,13 @@
   "navigation": {
     "groups": [
       {
+        "group": "Get Started",
+        "pages": [
+          "introduction",
+          "clients/administration"
+        ]
+      },
+      {
         "group": "Use Cases",
         "pages": [
           "use-cases/build-panel",
@@ -23,10 +30,10 @@
         "group": "Essentials",
         "pages": [
           "clients/panels",
-          "clients/segments/index",
-          "clients/questions/index",
-          "clients/surveys/index",
-          "clients/studies/index"
+          "clients/segments",
+          "clients/questions",
+          "clients/surveys",
+          "clients/studies"
         ]
       }
     ]
@@ -50,9 +57,8 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "linkedin": "https://www.linkedin.com/company/user-research-international/",
+      "facebook": "https://www.facebook.com/UserResearchInternational/"
     }
   }
 }
