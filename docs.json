@@ -21,6 +21,15 @@
             ]
           },
           {
+            "group": "Use Cases",
+            "pages": [
+              "use-cases/build-panel",
+              "use-cases/recruit-from-segment",
+              "use-cases/recruit-from-survey",
+              "use-cases/survey-panelists"
+            ]
+          },
+          {
             "group": "Essentials",
             "pages": [
               "clients/panels/index",
