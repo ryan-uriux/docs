@@ -9,48 +9,34 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Guides",
-        "groups": [
-          {
-            "group": "Get Started",
-            "pages": [
-              "introduction",
-              "clients/administration/index"
-            ]
-          },
-          {
-            "group": "Use Cases",
-            "pages": [
-              "use-cases/build-panel",
-              "use-cases/recruit-from-segment",
-              "use-cases/recruit-from-survey",
-              "use-cases/survey-panelists"
-            ]
-          },
-          {
-            "group": "Essentials",
-            "pages": [
-              "clients/panels/index",
-              "clients/segments/index",
-              "clients/questions/index",
-              "clients/surveys/index",
-              "clients/studies/index"
-            ]
-          }
+        "group": "Get Started",
+        "pages": [
+          "introduction",
+          "clients/administration/index"
+        ]
+      },
+      {
+        "group": "Use Cases",
+        "pages": [
+          "use-cases/build-panel",
+          "use-cases/recruit-from-segment",
+          "use-cases/recruit-from-survey",
+          "use-cases/survey-panelists"
+        ]
+      },
+      {
+        "group": "Essentials",
+        "pages": [
+          "clients/panels/index",
+          "clients/segments/index",
+          "clients/questions/index",
+          "clients/surveys/index",
+          "clients/studies/index"
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://panelpro.mintlify.app",
-          "icon": "book-open-cover"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
