@@ -22,7 +22,7 @@
       {
         "group": "Essentials",
         "pages": [
-          "clients/panels/index",
+          "clients/panels",
           "clients/segments/index",
           "clients/questions/index",
           "clients/surveys/index",
