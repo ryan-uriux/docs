@@ -18,6 +18,16 @@
           "use-cases/recruit-from-survey",
           "use-cases/survey-panelists"
         ]
+      },
+      {
+        "group": "Essentials",
+        "pages": [
+          "clients/panels/index",
+          "clients/segments/index",
+          "clients/questions/index",
+          "clients/surveys/index",
+          "clients/studies/index"
+        ]
       }
     ]
   },
