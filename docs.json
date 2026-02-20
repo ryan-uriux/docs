@@ -26,7 +26,7 @@
         ]
       },
       {
-        "group": "Essentials",
+        "group": "Platform",
         "pages": [
           "clients/panels",
           "clients/segments",
