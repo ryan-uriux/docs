@@ -29,6 +29,12 @@ When setting up sessions, you'll configure:
 - **Max participants** — How many participants can be scheduled into this session
 - **Instructions** — Any additional details participants need to know before the session
 
+## Session Defaults
+
+Since most sessions in a study share the same host, duration, location, and instructions, Panel Pro lets you save **session defaults** so you don't have to re-enter that information every time you create a new session.
+
+When you create your first session, **Save as Session Defaults** is checked by default. This saves your settings as the study's defaults, so every session you create after that will be pre-filled with those values. You can always override the defaults on individual sessions as needed — for example, changing the host for a specific time slot.
+
 ## Labels (Benchmarks)
 
 Sessions can optionally require a **label**. Labels are tags that get applied to panelists during a survey (via the Label block). When a session requires a label, only participants who have that label can be scheduled into it.
@@ -94,6 +100,20 @@ Once you've sourced candidates into your study, the scheduling flow works like t
 3. **Participants complete the prerequisite survey** — If you've attached a [prerequisite survey](#prerequisite-surveys) to the study (e.g., an NDA or consent form), participants must complete it before they can proceed to scheduling.
 4. **Participants self-schedule** — After completing any prerequisites, participants see all available sessions and pick a time slot that works for them. If a session has a **label requirement**, they'll only see sessions they're eligible for based on their labels — no manual management needed.
 5. **Calendar invites go out** — Once a participant schedules into a session, the platform sends calendar invites and reminders automatically.
+
+# Cancellations
+
+There are two types of cancellations in Panel Pro, and it's important to understand the difference.
+
+## Canceling a Session
+
+Canceling a **session** removes it entirely from the study. The session will no longer appear in the list of available sessions when participants self-schedule. If one or more participants were already scheduled for that session, they are automatically canceled as well.
+
+## Canceling a Participant
+
+If you want to keep the session but remove a specific participant from it, you cancel the **participant** instead. Navigate to the `Participants` tab, find the participant in the table, click the `...` menu on their row, and select `Cancel Participant`. The session stays available for other participants — only that individual is removed.
+
+Note that you can only cancel a participant **before** the session time has passed. Once the session time has passed, cancellation is no longer available — at that point, your only options are to mark the participant as **Participated** or **No Show**.
 
 # Gratuity
 
