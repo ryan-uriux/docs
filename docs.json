@@ -32,7 +32,8 @@
           "clients/segments",
           "clients/questions",
           "clients/surveys",
-          "clients/studies"
+          "clients/studies",
+          "clients/panelist-viewer"
         ]
       }
     ]

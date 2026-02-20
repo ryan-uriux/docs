@@ -4,3 +4,113 @@ description: "Create and manage research studies and invite participants to sess
 icon: "user-check"
 sidebarTitle: "Studies"
 ---
+
+# What is a Study?
+
+A study in Panel Pro is a container for organizing your research sessions and managing participants. Whether you're running a single round of usability interviews or a multi-phase research project with screening calls and deep-dive sessions, a study keeps everything in one place — sessions, candidates, participants, scheduling, and messaging.
+
+# Creating a Study
+
+To create a study, navigate to the **Studies** section and click `+ Create Study`. You'll provide:
+
+- **Name** — An internal name for your team to identify the study
+- **External description** — A participant-facing description that panelists will see when they are invited. This should explain what the study is about and what participants can expect.
+- **Notification recipients** — Team members who should receive notifications about study activity (new candidates, scheduling updates, etc.)
+
+# Sessions
+
+Sessions are the scheduled time slots where research actually happens. Each session represents a specific meeting between a host and one or more participants.
+
+When setting up sessions, you'll configure:
+
+- **Duration** — How long the session will last
+- **Host** — The team member running the session
+- **Location** — Where the session takes place (a video call link, physical address, etc.)
+- **Max participants** — How many participants can be scheduled into this session
+- **Instructions** — Any additional details participants need to know before the session
+
+## Labels (Benchmarks)
+
+Sessions can optionally require a **label**. Labels are tags that get applied to panelists during a survey (via the Label block). When a session requires a label, only participants who have that label can be scheduled into it.
+
+This is a powerful mechanism for gating access to sessions. For example, you might run a screening survey that labels respondents based on their product usage, then create sessions that require specific labels so that only the right participants can schedule into them.
+
+## Gratuity Bonus
+
+Each session can include a **gratuity bonus** — an additional payment on top of the participant's standard hourly rate for that session. This is useful for longer sessions, sessions that require extra preparation, or as an incentive for hard-to-recruit profiles.
+
+## Invite-Only Sessions
+
+Mark a session as **invite-only** to restrict who can self-schedule. When a session is invite-only, only participants who have been explicitly invited to that session can schedule themselves into it. This gives you precise control over which participants end up in which sessions.
+
+# Multi-Phase Studies
+
+Panel Pro supports **multi-phase studies** — studies that include multiple types of sessions within a single study. This is ideal for research projects where you need to move participants through different stages.
+
+*For example, let's say you're running a study that starts with a 5-minute pre-screening call to verify participants meet your criteria, followed by a 90-minute deep-dive interview for those who pass. You can set up both types of sessions within the same study.*
+
+Here's how multi-phase studies typically work:
+
+1. **Create your sessions** — Set up sessions for each phase (e.g., "Pre-Screen" sessions at 5 minutes and "Deep Dive" sessions at 90 minutes)
+2. **Use labels to gate phases** — Attach a prerequisite survey to your study that labels participants during the pre-screen phase. Require that label on your deep-dive sessions so that only participants who passed the pre-screen can schedule into them.
+3. **Participants progress through phases** — Participants first schedule into pre-screen sessions. After completing the pre-screen (and receiving the appropriate label), they become eligible for deep-dive sessions.
+
+<Tip>
+Multi-phase studies keep all your research organized in one place. Instead of creating separate studies for each phase and manually tracking who should move forward, labels and session requirements handle the progression automatically.
+</Tip>
+
+# Candidates & Participants
+
+## Sourcing Candidates
+
+Before anyone can participate in your study, they need to be added as a **candidate**. You can source candidates from several places in the platform:
+
+- **Panels** — Pull from a curated list of panelists you've already assembled
+- **Segments** — Pull from a dynamic group of panelists matching your criteria
+- **Surveys** — Import respondents from a survey you've distributed
+- **Other Studies** — Bring in participants from a previous study
+
+Navigate to the `Candidates` section of your study and click `Add Candidates`. Select your source, choose how many candidates to add, and they'll be imported into your study for review.
+
+## Approval Workflow
+
+Every candidate goes through an approval workflow before they can be invited to participate:
+
+- **Needs Review** — The default state when a candidate is added. You need to review their profile and decide.
+- **Approved** — The candidate is cleared to be invited to sessions.
+- **Rejected** — The candidate does not meet your criteria for this study.
+- **Hold** — The candidate might be a fit, but you want to wait before making a decision.
+
+Review candidates using the Candidate Viewer, which shows their panelist profile and — if they were sourced from a survey — their survey responses. Once you've approved candidates, you can invite them to participate.
+
+# Scheduling
+
+When approved candidates are invited to participate, they receive a link to view available sessions and self-schedule into a time slot that works for them. The platform handles calendar invites and reminders automatically.
+
+If a session has a **label requirement**, participants will only see sessions they're eligible for based on their labels. This means you don't need to manually manage which participants can schedule into which sessions — the system handles it based on the labels applied during surveys.
+
+# Gratuity
+
+Participants are compensated for their time at their **hourly rate**, which typically ranges from $100–$150/hr based on their skills and experience. The total payment for a session is calculated as:
+
+> **Hourly rate × session duration + any session bonus**
+
+For example, a participant with a $125/hr rate attending a 90-minute session with a $25 bonus would earn: $125 × 1.5 hours + $25 = **$212.50**.
+
+# Prerequisite Surveys
+
+You can attach a **prerequisite survey** to a study. Prerequisite surveys are separate from screening surveys — they are designed for things like NDAs, biometric consent agreements, or other forms that require a participant's acknowledgment before they can schedule into sessions.
+
+When a prerequisite survey is attached, participants must complete it before they are allowed to schedule. This ensures that all necessary agreements are in place before research begins.
+
+# Follow-ups
+
+Sometimes you need to compensate a participant for additional work after their original session — a follow-up interview, a diary study entry, or a product trial. To pay someone for a follow-up, manually schedule them into a session for the time the follow-up occurred. They'll be paid their standard hourly rate for that session's duration.
+
+<Note>
+Follow-up payments are handled through the same session and gratuity system as regular sessions. There's no separate follow-up payment mechanism — just schedule the participant and the compensation flows through automatically.
+</Note>
+
+# Messaging
+
+Panel Pro includes built-in **host-participant messaging** within the platform. Hosts can communicate with participants directly through the study interface — useful for sharing preparation materials, confirming details, or handling last-minute changes without needing to exchange personal contact information.

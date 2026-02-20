@@ -4,3 +4,107 @@ description: "Design surveys and send them to targeted audiences for quick resea
 icon: "clipboard-check"
 sidebarTitle: "Surveys"
 ---
+
+# What is a Survey?
+
+A survey in Panel Pro is a structured set of questions that you design and send to panelists. Surveys serve many purposes — screening potential study participants, profiling panelists for future research, collecting feedback on products or experiences, or gathering data that powers your segments.
+
+Surveys are sent to targeted audiences through **distributions**, which control who receives the survey, how many people receive it, and when it goes out. Once responses come in, the data flows directly into your questions library and can be used for segmentation, candidate sourcing, and more.
+
+# Survey Lifecycle
+
+Every survey moves through a simple lifecycle:
+
+- **Draft** — The survey is being designed and is not yet available to panelists. You can freely edit questions, add blocks, and configure settings while in draft.
+- **Published** — The survey is live and can be distributed to panelists. Published surveys use a versioning system, so you can make updates to a published survey without affecting responses already collected. Each time you publish changes, a new version is created.
+- **Archived** — The survey is no longer active. Archived surveys retain all their response data but can no longer receive new distributions.
+
+# The Survey Designer
+
+The survey designer is a block-based editor with a three-panel layout: a **block list** on the left showing your survey structure, an **editor** in the center for configuring the selected block, and a **settings panel** on the right for block-level options like conditions.
+
+You build surveys by adding blocks to your block list. There are three categories of blocks: question blocks, action blocks, and container blocks.
+
+## Question Blocks
+
+Question blocks collect responses from panelists. Each question block type is designed for a specific kind of data:
+
+- **Text** — Open-ended text responses (short answer or long form)
+- **Number** — Numeric input with optional min/max validation
+- **Multiple Choice** — Single-select or multi-select options
+- **Matrix** — Grid-style questions with rows and columns
+- **Upload** — File uploads from the respondent
+
+## Action Blocks
+
+Action blocks control the flow of the survey and apply logic based on a respondent's path:
+
+- **Disqualify** — Marks the respondent as disqualified with a specific reason (see Eligibility Criteria below)
+- **Flex** — Marks the respondent with a "flex" eligibility state, indicating they are a maybe
+- **Jump** — Skips the respondent ahead to a specific block in the survey
+- **Label** — Tags the respondent with a label that can be used later for study session matching and other workflows
+- **Redirect** — Sends the respondent to an external URL
+
+## Container Blocks
+
+Container blocks organize and group other blocks:
+
+- **Sections** — Group blocks together, with an option to randomize the order of blocks within the section
+- **Survey Endings** — Define custom ending experiences for respondents based on their path through the survey
+
+## Conditions
+
+Any block in the survey can have a **condition** attached to it. Conditions control when a block is shown to the respondent. For example, you might show a follow-up question only if the respondent selected a specific answer to a previous question, or show a disqualify block only if certain criteria are met.
+
+Conditions make it possible to build branching, dynamic surveys that adapt to each respondent's answers.
+
+# Eligibility Criteria
+
+When a panelist takes your survey, they move through a series of **eligibility states** based on the action blocks they encounter. Every respondent starts as **Unknown** and their state can change as they progress through the survey.
+
+The four eligibility states are:
+
+- **Unknown** — The default starting state. The respondent hasn't hit any action blocks yet.
+- **Qualified** — The respondent meets your criteria. (There is no explicit "Qualify" block — a respondent who completes the survey without being disqualified or flexed is considered qualified.)
+- **Disqualified** — The respondent does not meet your criteria. Triggered by a Disqualify block.
+- **Flex** — The respondent is a "maybe." Triggered by a Flex block. Useful when you want to flag someone for manual review.
+
+**Precedence** matters when a respondent encounters multiple action blocks: **Disqualified > Qualified > Flex > Unknown**. If a respondent hits both a Flex block and a Disqualify block during their survey, they end up Disqualified.
+
+## The Disqualify Block
+
+The Disqualify block removes a respondent from eligibility and records a reason. Available reasons include:
+
+- **Ineligible** — The respondent doesn't meet your profile requirements
+- **Scammer** — The respondent appears to be a bad actor
+- **Poor Quality** — The respondent's answers are low quality or incoherent
+
+Pair Disqualify blocks with conditions to automatically screen out respondents based on their answers. For example, if your research requires people who use a specific product, add a Disqualify block with an "Ineligible" reason conditioned on the respondent answering "No" to "Do you use Product X?"
+
+## End Survey When Disqualified
+
+Enable the **End Survey When Disqualified** setting to immediately terminate the survey for any respondent who hits a Disqualify block. Instead of continuing through the remaining questions, the disqualified respondent is routed to a survey ending and exits right away.
+
+This is a cost-saving measure — since panelists are paid per question, ending the survey early for disqualified respondents means they answer fewer questions and the cost per disqualified respondent is lower.
+
+<Tip>
+Place your most critical screening questions early in the survey and attach Disqualify blocks to them. Combined with "End Survey When Disqualified," this ensures you only pay for the full survey when respondents actually meet your criteria.
+</Tip>
+
+# Survey Gratuity
+
+Panelists are paid for every survey they take. Gratuity is calculated **per question** based on the estimated time to complete each question. We value participants' time, which is why everyone who takes a survey gets paid — even respondents who are ultimately disqualified. The minimum gratuity for any survey response is **$0.50**.
+
+As a rough guide, survey gratuity works out to about **$1 per minute** of estimated completion time. For example, consider a 10-minute screening survey with disqualification checkpoints along the way:
+
+- A respondent who is disqualified after **1 minute** of questions earns roughly **$1**
+- A respondent who is disqualified halfway through at **5 minutes** earns roughly **$5**
+- A respondent who completes the full **10-minute** survey earns roughly **$10**
+
+Early termination via "End Survey When Disqualified" reduces your costs because disqualified respondents answer fewer questions before exiting. If you place your screening questions up front, most disqualified respondents will exit in the first minute or two — keeping the per-respondent cost low while still compensating them fairly for their time. The cost estimate on your distribution settings will reflect this.
+
+# Distributing a Survey
+
+Once your survey is published, you send it to panelists through **distributions**. A distribution defines your target audience (using a segment or ad-hoc conditions), how many responses you want, and how the survey should be batched and delivered.
+
+For a detailed walkthrough of the distribution workflow, see the [Survey Panelists](/use-cases/survey-panelists) use case. For information on how distributions intersect with segments and panels, see [Segments](/clients/segments) and [Panels](/clients/panels).

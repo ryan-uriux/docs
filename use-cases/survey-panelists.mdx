@@ -1,4 +1,76 @@
 ---
 title: "Survey Panelists"
-description: "Description of your new file."
+description: "Collect data from panelists via surveys for research, profiling, or screening — with full control over targeting and distribution."
 ---
+
+# Survey Panelists
+
+Surveys are the primary way to collect data from panelists in Panel Pro. Whether you're profiling panelists for future research, screening candidates for a study, or conducting standalone survey research, the workflow starts here.
+
+*Let's say you want to understand how your panelists use AI tools in their daily work. You'll design a survey with the right questions, target the right audience, distribute it, and monitor the results as they come in.*
+
+## Designing Your Survey
+
+Navigate to **Surveys** and create a new survey. The block-based designer lets you build your survey from three types of blocks:
+
+- **Question blocks** — The data you're collecting (Text, Number, Multiple Choice, Matrix, Upload)
+- **Action blocks** — Logic that controls the survey flow (Disqualify, Flex, Jump, Label, Redirect)
+- **Container blocks** — Structure for organizing your survey (Sections with optional randomization, Survey Endings)
+
+Every block can have a **condition** that controls when it's shown, so you can build branching surveys that adapt to each respondent's answers.
+
+For a detailed overview of the survey designer and all block types, see [Surveys](/clients/surveys).
+
+## Targeting Your Audience
+
+When you're ready to distribute your survey, you have two approaches for defining who receives it:
+
+### Distribute Against a Segment
+
+If you've already built a **segment** that matches the audience you want, use it as your target audience. Navigate to your survey's `Distributions` tab, create a new distribution, and select your segment.
+
+This is ideal when you have a well-defined audience you survey repeatedly — your segment stays up to date automatically, and you can distribute new surveys to it whenever needed.
+
+### Ad-hoc Conditions
+
+If you don't have a pre-built segment (or want to target a slightly different audience for this specific survey), define **ad-hoc conditions** directly on the distribution. These work just like segment conditions — you can filter on Panel Pro questions, your team's questions, panel membership, and more — but they live on the distribution rather than being saved as a reusable segment.
+
+Ad-hoc conditions are great for one-off surveys where building a permanent segment isn't worth the effort.
+
+## Distribution Settings
+
+When creating a distribution, you'll configure several settings that control how your survey is delivered:
+
+- **Batch size** — How many panelists receive the survey in each batch. Smaller batches let you monitor quality before committing to a full send.
+- **Batch interval** — The time between batches. This controls the pacing of your distribution.
+- **Scheduled start** — Optionally delay the distribution to start at a future date and time.
+- **Stop conditions** — Rules that automatically pause or stop the distribution (e.g., when you've hit your target response count).
+- **Target response count** — How many completed, qualified responses you want. The platform will keep sending batches until this target is met or all eligible panelists have been invited.
+- **Cost estimate** — Based on your survey length and target response count, the platform provides an estimated cost for the distribution.
+
+<Note>
+The platform automatically excludes panelists who have already received or completed this survey, so you don't need to worry about duplicate sends when running multiple batches.
+</Note>
+
+## Gratuity
+
+Panelists are paid for every survey they take. Gratuity is calculated **per question** based on the estimated time to complete each question. Everyone gets paid for taking surveys — we value participants' time, and fair compensation is fundamental to the quality of responses you receive.
+
+If your survey uses **End Survey When Disqualified**, disqualified respondents exit early and answer fewer questions, which reduces the per-respondent cost. Your distribution's cost estimate accounts for this.
+
+## Monitoring Results
+
+Once your distribution is live, track its progress through the distribution dashboard. Key metrics include:
+
+- **Delivered** — How many panelists have been sent the survey
+- **Opened** — How many panelists opened the survey invitation
+- **Started** — How many panelists began answering questions
+- **Completed** — How many panelists finished the survey
+- **Qualified** — How many respondents ended with a Qualified eligibility state
+- **Disqualified** — How many respondents were disqualified during the survey
+
+These metrics help you gauge whether your targeting is effective and whether you need to adjust your distribution settings. If your qualification rate is low, you might want to refine your segment conditions or review your disqualification criteria.
+
+<Tip>
+If you're surveying to screen people for a study, your next step is to import qualified respondents as study candidates. See [Survey People, Then Schedule](/use-cases/recruit-from-survey) for the full workflow.
+</Tip>

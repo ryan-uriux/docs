@@ -1,4 +1,84 @@
 ---
 title: "Recruit From a Survey"
-description: "Description of your new file."
+description: "Screen panelists with a survey first, review their responses, then schedule qualified people into your study."
 ---
+
+# Survey People, Then Schedule
+
+This is the most common recruiting workflow in Panel Pro. You send a screening survey to a targeted audience, review the responses, and then schedule qualified respondents into your study. This approach gives you the most control over who ends up in your sessions.
+
+*Let's say you're studying how designers collaborate with engineers on accessibility features. You need to find designers who work closely with engineering teams and have shipped accessibility improvements in the past year. A segment alone won't give you enough confidence — you want to ask specific questions and review their answers before scheduling.*
+
+## Step 1: Design Your Screening Survey
+
+Navigate to **Surveys** and create a new survey. Build it with the questions you need to determine fit. For our example, you might include:
+
+- A multiple choice question about their role (Designer, Design Lead, etc.)
+- An open-text question: "Describe a recent project where you worked with engineers on accessibility"
+- A multiple choice question about how often they collaborate with engineering
+
+### Screen Out Obvious Mismatches
+
+Use **Disqualify blocks** with conditions for respondents who clearly don't fit. For example, if someone selects "I don't work with engineers," attach a Disqualify block with an "Ineligible" reason. Place these screening questions early in the survey.
+
+### Enable Early Termination
+
+Turn on **End Survey When Disqualified** in your survey settings. This way, disqualified respondents exit the survey immediately instead of answering all remaining questions. Since panelists are paid per question, this saves you money on respondents who aren't a fit.
+
+### Tag People with Labels
+
+Use **Label blocks** to tag respondents based on their answers. For example, label someone "accessibility-champion" if they indicate they've led accessibility initiatives. These labels can be used later to match participants to specific study sessions.
+
+<Tip>
+The combination of Disqualify blocks, early termination, and Labels is the most cost-effective screening pattern. You quickly filter out bad fits, keep costs low, and tag good candidates for easy session matching later.
+</Tip>
+
+## Step 2: Distribute the Survey
+
+Publish your survey, then create a **distribution**. Choose your target audience:
+
+- **Segment** — Send to an existing segment of panelists who match high-level criteria
+- **Ad-hoc conditions** — Define targeting conditions on the fly (e.g., job function, location, specific question responses)
+
+Set your **target response count** to the number of qualified responses you want, and configure the **batch size** to control how many invitations go out at a time. The platform will keep sending batches until you hit your target or run out of eligible panelists.
+
+## Step 3: Review Survey Responses
+
+As responses come in, head to your survey's results to review respondents. You can see each person's answers, their eligibility state (Qualified, Disqualified, Flex, Unknown), and any labels they received.
+
+This is where the real screening happens. Most clients review open-text responses and look at the combination of answers to determine who would be a strong participant for their study.
+
+## Step 4: Create Your Study
+
+Navigate to **Studies** and create a study for your research. Set up sessions with the appropriate duration, host, and details.
+
+If you used labels in your screening survey, you can set up sessions that **require specific labels**. For example, create a set of sessions that require the "accessibility-champion" label so that only those tagged respondents can schedule into them.
+
+## Step 5: Import Survey Respondents as Candidates
+
+In your study, navigate to `Candidates` and click `Add Candidates`. Select **Survey** as your source and choose your screening survey. Import the qualified respondents as candidates.
+
+Their survey responses will be visible in the **Candidate Viewer**, so you can review their answers alongside their panelist profile when making approval decisions.
+
+## Step 6: Review, Invite & Schedule
+
+Review candidates in the Candidate Viewer — you'll see their full panelist profile plus their screening survey responses. Approve the candidates you want, then send invitations. Participants pick a session that works for them and scheduling is handled automatically.
+
+## Multi-Phase Extension
+
+After completing initial sessions, you can set up **follow-up sessions** within the same study for deeper interviews. Use labels to gate access:
+
+1. During your initial sessions, identify participants you want for a follow-up
+2. Label them through a follow-up survey or manually
+3. Create new sessions in the same study that require that label
+4. Invite those participants to schedule into the follow-up sessions
+
+This keeps your entire multi-phase research project organized in one study rather than splitting it across multiple.
+
+## Cost Efficiency
+
+This workflow is designed to be cost-effective at every stage:
+
+- **Early termination** keeps survey costs low — disqualified respondents exit quickly and answer fewer paid questions
+- **Targeted distributions** ensure you're only surveying people who are likely to qualify based on their existing profile data
+- **The screening step** means you only schedule (and pay session rates for) people you've already vetted through their survey responses
