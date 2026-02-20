@@ -11,25 +11,88 @@ A **Segment** in Panel Pro is a **dynamic group of panelists** that updates in r
 
 Unlike [Panels](/clients/panels), which are manually curated lists, segments are automatic — panelists are added or removed as their data changes. If someone updates their profile or completes a new survey, they'll appear in (or drop out of) your segments accordingly.
 
-# What Can You Segment On?
+# Condition Types
 
-## Panel Pro Questions
+When building a segment, you add conditions to define who should be included. There are seven types of conditions available, each filtering on a different dimension of panelist data.
 
-The most common use case is segmenting on responses to [questions](/clients/questions). Out of the box, Panel Pro includes pre-profiled panelists who have already responded to dozens, if not hundreds, of questions. These global questions are shared across clients and are useful for creating high-level segments right away — no survey work needed.
+## Panelist Conditions
 
-## Your Team's Questions
+Filter on panelist profile attributes — the basics of who someone is and where they work.
 
-You can also segment on responses to your own questions — questions you've sent to panelists via [Surveys](/clients/surveys). The responses to these questions are scoped to your team and are never shared across clients. This means you can ask panelists very specific questions relevant to your profile needs, then use those responses as segment conditions.
+- **Job Title** — Search for specific job titles. *Example: find all panelists with "Software Engineer" or "Backend Developer" in their title.*
+- **Job Level** — Filter by seniority: Entry-Level, Intermediate, Experienced, First-Level Management, Middle Management, Senior Management, Executive/C-Level, Business Owner, or Freelancer.
+- **Industry** — Filter by industry category (Technology/IT, Healthcare, Finance, Automotive, and many more).
+- **Employment Status** — Filter by employment type: full-time, part-time, self-employed, student, retired, etc.
+- **Location** — Find panelists within a radius of a specific location. *Example: panelists within 30 miles of Seattle, WA.*
+- **Company Name** — Search by company name (contains, starts with, or doesn't contain).
+- **Age** — Filter by age range. *Example: panelists between 25 and 40 years old.*
+- **Hourly Rate** — Filter by the panelist's hourly session rate (equal to, greater than, less than, etc.).
+- **Last Name** — Search by last name (contains, starts with, or doesn't contain).
+- **Email** — Search by email address (contains, starts with, or doesn't contain).
 
-## Segments, Panels, and Distributions
+<Tip>
+Panelist conditions are great for quick, high-level targeting. Combine a Location condition with a Job Title condition to find, say, all Software Engineers within 50 miles of San Francisco.
+</Tip>
 
-Beyond question responses, you can segment on whether panelists:
+## Question Conditions
 
-- Belong (or don't belong) to another **segment**
-- Belong (or don't belong) to a **panel**
-- Have received (or haven't received) a **survey distribution**
+Filter on responses to [questions](/clients/questions) — both Panel Pro's global questions and your team's survey questions. This is the most common condition type.
 
-These conditions are useful for excluding people you've already contacted, targeting people in a specific panel, or building on top of existing segments.
+- **Answered** — Filter based on how a panelist answered a specific question. The available operators depend on the question type:
+  - *Text questions* — contains, doesn't contain, starts with, is empty, is not empty
+  - *Number questions* — equals, greater than, less than, between, etc.
+  - *Multiple choice questions* — selected any of, selected none of, or (for multi-select) selected all of specific choices
+  - *Matrix questions* — same as multiple choice, but scoped to a specific statement (row)
+  - *Upload questions* — has uploaded or hasn't uploaded a file
+- **Never Answered** — Find panelists who have never responded to a specific question
+
+## Segment Conditions
+
+Filter based on membership in other segments.
+
+- **Belong to any of** — Panelist is a member of at least one of the selected segments
+- **Belong to all of** — Panelist is a member of every selected segment
+- **Belong to none of** — Panelist is not a member of any of the selected segments
+
+This is useful for building segments that layer on top of each other. *Example: start with a broad "Developers" segment, then create a narrower segment that requires membership in "Developers" plus additional conditions.*
+
+## Panel Conditions
+
+Filter based on membership in [Panels](/clients/panels).
+
+- **Belong to any of** — Panelist is in at least one of the selected panels
+- **Belong to all of** — Panelist is in every selected panel
+- **Belong to none of** — Panelist is not in any of the selected panels
+
+*Example: exclude panelists who are already in your "Contacted for Study X" panel so you don't reach out to them again.*
+
+## Survey Conditions
+
+Filter based on a panelist's interaction with a specific [survey](/clients/surveys).
+
+- **Completed** — Panelist completed the survey. You can further filter by eligibility state (Qualified, Flex, or Disqualified).
+- **Never Taken** — Panelist has never been sent or started the survey.
+- **Never Finished** — Panelist started the survey but didn't complete it.
+
+*Example: find panelists who completed your screening survey and were marked as Qualified.*
+
+## Distribution Conditions
+
+Filter based on whether a panelist received a survey distribution.
+
+- **Received** — Panelist was sent an invitation for a specific survey
+- **Never Received** — Panelist was never sent an invitation for a specific survey
+
+This is useful for avoiding duplicate outreach. *Example: exclude panelists who already received your latest survey distribution so you can send a follow-up to a fresh audience.*
+
+## Study Conditions
+
+Filter based on a panelist's participation in [studies](/clients/studies).
+
+- **Attended** — Panelist attended a session in a specific study
+- **Never Attended** — Panelist has not attended any session within a given time period (e.g., the last 30 days, 6 months, or 1 year)
+
+*Example: find panelists who haven't participated in any study in the last 3 months — useful for reaching out to people who haven't been recently engaged.*
 
 # How Segments Work
 
