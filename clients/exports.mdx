@@ -1,0 +1,71 @@
+---
+title: "Exports"
+description: "Export panelist data, survey responses, and candidate information as CSV files for use in your own tools and reports."
+icon: "file-export"
+sidebarTitle: "Exports"
+---
+
+# Exports
+
+Panel Pro lets you export data as CSV files from several places in the platform. Whether you need to pull survey responses into a spreadsheet, share candidate lists with your team, or analyze panelist data in your own tools, exports give you the raw data to work with.
+
+# Where You Can Export
+
+## Survey Respondents
+
+Export respondent data from any published survey. Navigate to your survey, open the `...` menu, and select `Export Respondents`. This gives you each respondent's survey answers along with their panelist profile data.
+
+This is useful when you want to analyze survey responses outside the platform, share results with stakeholders, or feed data into other research tools.
+
+## Study Candidates
+
+Export candidate data from a study. Navigate to your study, open the `...` menu, and select `Export Candidates`. You can export all candidates at once or filter by status:
+
+- **All Candidates**
+- **Approved**
+- **Needs Review**
+- **Hold**
+- **Rejected**
+
+Filtering by status is handy when you only need a list of approved candidates to share with a stakeholder, or want to review rejected candidates separately.
+
+## Panel Members
+
+Export all members of a panel. Navigate to your panel, open the `...` menu, and select `Export Panel`. This gives you the panelist profile data for everyone in the panel.
+
+# What's Included in an Export
+
+When you export, a dialog lets you configure exactly what data you want in your CSV. You can customize:
+
+## Panelist Data
+
+Choose which panelist profile fields to include — things like name, email, gender, age, country, industry, company size, and which panels or segments they belong to.
+
+<Note>
+You can toggle **Exclude Panelist PII** to remove personally identifiable information (name, email) from the export if you need to share the data without exposing participant details.
+</Note>
+
+## Survey Responses
+
+Include responses from specific surveys. If you're exporting survey respondents, their answers are included by default. For panel or candidate exports, you can optionally pull in responses from any survey they've completed.
+
+## Question Sets
+
+Include responses to [Question Sets](/clients/questions#question-sets) you've created. This is a convenient way to pull in the specific Panel Pro data points you care about without exporting hundreds of columns.
+
+## Respondent Data
+
+Optionally include metadata about each respondent's survey interaction — their eligibility status, labels, response timestamps, and distribution information.
+
+# Formatting Options
+
+The export dialog also gives you control over how the data is structured in the CSV:
+
+- **Expand single-select questions** — Create a separate column for each choice option instead of a single column with the selected value
+- **Expand multi-select questions** — Create a separate column for each choice option with a yes/no indicator
+- **Expand choice text** — Add a separate column for free-text entries on choices with text entry enabled (e.g., "Other: ___")
+- **Header rows** — Choose which header rows to include: question IDs, question types, question titles, and/or question names
+
+# How Exports Work
+
+Exports are processed in the background — once you configure your options and submit, Panel Pro begins generating the CSV. You'll see a notification that your export is processing. When it's ready, the download starts automatically. Large exports can take several minutes, but you're free to continue using the platform while it processes.

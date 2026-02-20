@@ -33,7 +33,8 @@
           "clients/questions",
           "clients/surveys",
           "clients/studies",
-          "clients/panelist-viewer"
+          "clients/panelist-viewer",
+          "clients/exports"
         ]
       }
     ]
