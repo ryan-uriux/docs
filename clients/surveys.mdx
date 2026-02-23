@@ -241,6 +241,40 @@ As a rough guide, each respondent costs about **\$1 per minute** of estimated co
 
 Early termination via "End Survey When Disqualified" reduces your costs because disqualified respondents answer fewer questions before exiting. If you place your screening questions up front, most disqualified respondents will exit in the first minute or two — keeping the per-respondent cost low while still compensating participants fairly for their time. The cost estimate on your distribution settings will reflect this.
 
+# Survey References
+
+Survey references let you embed one survey inside another. The respondent sees the referenced survey's blocks inline — they don't know they've crossed into a different survey. This is primarily used to reuse a standard set of questions (like profiling questions) across multiple surveys without duplicating them.
+
+## How References Work
+
+When a respondent reaches a [Survey Reference](#survey-reference) block, the referenced survey's blocks are presented inline within the parent survey. The respondent progresses through them as if they were part of the parent survey. When the referenced survey's blocks are complete, the respondent continues with the next block in the parent survey.
+
+Responses are stored on the **referenced** survey's questions, not the parent's. This is the key benefit for reuse — profiling data updates on the same questions regardless of which survey referenced it.
+
+## When References Are Skipped
+
+A survey reference is skipped — the respondent moves past it automatically — when:
+
+- The referenced survey isn't published
+- The respondent has already completed the referenced survey (and it doesn't allow multiple submissions)
+- The respondent doesn't meet the referenced survey's prerequisites
+
+This means if a panelist has already taken a referenced profiling survey through another distribution or another parent survey, they won't be asked those questions again.
+
+## Eligibility and Disqualification
+
+Eligibility is tracked independently for the parent survey and each referenced survey. If a respondent is disqualified inside a referenced survey (via a Disqualify block, choice eligibility, etc.), that disqualification applies only to the referenced survey's respondent record — it does **not** carry back to the parent survey.
+
+"End Survey When Disqualified" inside a referenced survey routes the respondent to the referenced survey's ending, which then returns them to the parent survey to continue.
+
+## Payment
+
+Gratuity is calculated and paid once for the **parent** survey only — referenced surveys don't trigger separate payments. However, the time spent answering questions in referenced surveys **is included** in the parent survey's gratuity calculation. The panelist receives a single payment that accounts for the total time across all surveys in the chain.
+
+<Tip>
+Create your profiling questions as their own survey, then reference it from each research survey using a Survey Reference block. Responses update the same question data regardless of which parent survey referenced it — and panelists who've already completed the profiling survey skip it automatically.
+</Tip>
+
 # Distributing a Survey
 
 Once your survey is published, you send it to panelists through **distributions**. A distribution defines your target audience (using a segment or ad-hoc conditions), how many responses you want, and how the survey should be batched and delivered.
