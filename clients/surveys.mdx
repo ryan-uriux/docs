@@ -183,7 +183,7 @@ The three eligibility states are:
 
 **Precedence** matters when a respondent encounters multiple action blocks: **Disqualified > Qualified > Flex**. If a respondent hits both a Flex block and a Disqualify block during their survey, they end up Disqualified.
 
-## Choice Eligibility
+### Choice Eligibility
 
 Multiple Choice and Matrix questions can apply eligibility directly on individual choices, without needing a separate Disqualify or Flex block. You can mark each choice with an eligibility impact:
 
@@ -193,13 +193,13 @@ Multiple Choice and Matrix questions can apply eligibility directly on individua
 
 How these work depends on whether the question is **single-select** or **multi-select**:
 
-### Single-Select
+#### Single-Select
 
 In a single-select question, the respondent picks exactly one choice. If any choice is marked as **must-select**, then every other choice that isn't marked as must-select or flex becomes an implicit disqualifier. This means the respondent must pick one of your must-select choices to stay qualified — any other selection disqualifies them.
 
 Because of this behavior, single-select questions **cannot combine must-select and ineligible** markings on the same question. There's no need to — if must-select choices exist, everything else already disqualifies.
 
-### Multi-Select
+#### Multi-Select
 
 In a multi-select question, the respondent can select multiple choices. The rules are more flexible because the respondent isn't limited to one choice:
 
@@ -209,7 +209,7 @@ In a multi-select question, the respondent can select multiple choices. The rule
 
 Multi-select questions **can combine must-select and ineligible** markings because a respondent can select a must-select choice while avoiding ineligible ones.
 
-## The Disqualify Block
+### The Disqualify Block
 
 The Disqualify block removes a respondent from eligibility and records a reason. Available reasons include:
 
@@ -219,7 +219,7 @@ The Disqualify block removes a respondent from eligibility and records a reason.
 
 Pair Disqualify blocks with conditions to automatically screen out respondents based on their answers. For example, if your research requires people who use a specific product, add a Disqualify block with an "Ineligible" reason conditioned on the respondent answering "No" to "Do you use Product X?"
 
-## End Survey When Disqualified
+### End Survey When Disqualified
 
 Enable the **End Survey When Disqualified** setting in a question's settings to immediately terminate the survey for any respondent who is disqualified at that point. Instead of continuing through the remaining questions, the disqualified respondent is routed to a survey ending and exits right away.
 
@@ -245,13 +245,13 @@ Early termination via "End Survey When Disqualified" reduces your costs because 
 
 Survey references let you embed one survey inside another. The respondent sees the referenced survey's blocks inline — they don't know they've crossed into a different survey. This is primarily used to reuse a standard set of questions (like profiling questions) across multiple surveys without duplicating them.
 
-## How References Work
+### How References Work
 
 When a respondent reaches a [Survey Reference](#survey-reference) block, the referenced survey's blocks are presented inline within the parent survey. The respondent progresses through them as if they were part of the parent survey. When the referenced survey's blocks are complete, the respondent continues with the next block in the parent survey.
 
 Responses are stored on the **referenced** survey's questions, not the parent's. This is the key benefit for reuse — profiling data updates on the same questions regardless of which survey referenced it.
 
-## When References Are Skipped
+### When References Are Skipped
 
 A survey reference is skipped — the respondent moves past it automatically — when:
 
@@ -261,13 +261,13 @@ A survey reference is skipped — the respondent moves past it automatically —
 
 This means if a panelist has already taken a referenced profiling survey through another distribution or another parent survey, they won't be asked those questions again.
 
-## Eligibility and Disqualification
+### Eligibility and Disqualification
 
 Eligibility is tracked independently for the parent survey and each referenced survey. If a respondent is disqualified inside a referenced survey (via a Disqualify block, choice eligibility, etc.), that disqualification applies only to the referenced survey's respondent record — it does **not** carry back to the parent survey.
 
 "End Survey When Disqualified" inside a referenced survey routes the respondent to the referenced survey's ending, which then returns them to the parent survey to continue.
 
-## Payment
+### Payment
 
 Gratuity is calculated and paid once for the **parent** survey only — referenced surveys don't trigger separate payments. However, the time spent answering questions in referenced surveys **is included** in the parent survey's gratuity calculation. The panelist receives a single payment that accounts for the total time across all surveys in the chain.
 
