@@ -114,6 +114,44 @@ Once you've sourced candidates into your study, the scheduling flow works like t
 4. **Participants self-schedule** — After completing any prerequisites, participants see all available sessions and pick a time slot that works for them. If a session has a **label requirement**, they'll only see sessions they're eligible for based on their labels — no manual management needed.
 5. **Calendar invites go out** — Once a participant schedules into a session, the platform sends calendar invites and reminders automatically.
 
+# Email Notifications
+
+Panel Pro sends automated emails to participants at key points in the study lifecycle. These emails are sent on behalf of the platform — your personal email address is never exposed to participants.
+
+## Notification Types
+
+As a participant moves through the study, they receive the following emails:
+
+- **Invited** — Sent when a candidate is first invited to participate. Includes a link to the study where they can review details and self-schedule.
+- **Scheduled** — Sent after a participant picks a session. Confirms the session details and includes a calendar invite (.ics file) as an attachment.
+- **Reminder** — Sent automatically before the session to make sure participants don't forget. See [Email Reminders](#email-reminders) below.
+- **Canceled** — Sent if a session or participant is canceled. Includes an updated calendar invite that removes the event from their calendar.
+- **Attended** — Sent after the participant is marked as having attended, confirming their participation.
+- **Gratuity** — Sent when their payment has been processed.
+
+Each email includes relevant session details — the study name and description, session date and time, duration, location, host name, gratuity amount, and any participant instructions you've provided.
+
+## Email Reminders
+
+Reminders are sent automatically — there's nothing you need to configure. The platform checks for upcoming sessions every hour and sends a single reminder email to each scheduled participant before their session.
+
+**When reminders are sent:**
+
+- Reminders go out for sessions that are **2 to 24 hours away**. This means participants receive their reminder the day before or the morning of their session, depending on when the hourly check runs.
+- Each participant receives **only one reminder** per session — the system tracks whether a reminder has already been sent and won't send duplicates.
+- If a participant was recently sent a scheduling confirmation or invitation email (within the last **12 hours**), the reminder is skipped to avoid back-to-back emails.
+
+**What the reminder email includes:**
+
+- A summary of the session — study name, date, time, duration, location, host, gratuity, and instructions
+- A progress tracker showing where the participant is in the process (qualify, schedule, participate, receive reward)
+- A calendar invite (.ics attachment) so they can re-add or update the event on their calendar
+- A link to manage their session or message the host if they need to make changes
+
+<Tip>
+The calendar invite attached to reminder emails includes two built-in alarms: a notification **3 hours before** the session and another **10 minutes before**. These alarms trigger directly in the participant's calendar app, giving them an additional nudge beyond the email itself.
+</Tip>
+
 # Cancellations
 
 There are two types of cancellations in Panel Pro, and it's important to understand the difference.
