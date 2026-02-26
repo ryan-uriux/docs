@@ -280,3 +280,26 @@ Create your profiling questions as their own survey, then reference it from each
 Once your survey is published, you send it to panelists through **distributions**. A distribution defines your target audience (using a segment or ad-hoc conditions), how many responses you want, and how the survey should be batched and delivered.
 
 For a detailed walkthrough of the distribution workflow, see the [Survey Panelists](/use-cases/survey-panelists) use case. For information on how distributions intersect with segments and panels, see [Segments](/clients/segments) and [Panels](/clients/panels).
+
+# Survey Dashboard
+
+The survey dashboard is the overview you see when you open a survey. It provides at-a-glance metrics so you can monitor how your survey is performing and track your spend as responses come in.
+
+The dashboard has two sections: a top row of summary stats and a qualification breakdown below it.
+
+## Summary Stats
+
+- **Sent** — The total number of panelists who have been sent the survey across all distributions.
+- **Completions** — The number of completed responses received, along with the date of the most recent completion so you can see how recently activity has come in.
+- **Response Rate** — The percentage of panelists who completed the survey out of those who were sent it (completions / sent). This is your primary signal for how well your survey is performing — a low response rate may indicate issues with your targeting, survey length, or subject matter.
+- **Gratuity** — The total dollar amount paid for respondents for this survey. This lets you monitor your spend in real time as responses come in, rather than waiting until the survey is complete to reconcile costs. Since gratuity is calculated [per question](/clients/surveys#survey-gratuity) based on how far each respondent progresses, this number updates as each respondent finishes.
+
+## Qualification Breakdown
+
+Below the summary stats, a progress bar visualizes how your completions break down by eligibility status:
+
+- **Qualified** — Respondents who completed the survey and met your eligibility criteria.
+- **Flex** — Respondents flagged as "maybe" via Flex blocks, awaiting manual review.
+- **Disqualified** — Respondents who were disqualified based on their answers or action blocks.
+
+Each status shows both a count and a percentage of total responses. If your disqualified count is running high relative to your qualified count, you may want to revisit your targeting or distribution audience.
