@@ -1,0 +1,115 @@
+---
+title: "Forward to Qualtrics"
+description: "Redirect respondents from a Panel Pro survey to a Qualtrics survey, passing respondent data through URL parameters."
+---
+
+# Forward Respondents to a Qualtrics Survey
+
+Panel Pro's **Redirect** block lets you send respondents to an external URL when they reach a survey ending. By combining this with Qualtrics' **Embedded Data** feature, you can forward respondents from a Panel Pro survey into a Qualtrics survey — and pass identifying data (respondent ID, panelist ID, labels) through URL parameters so that Qualtrics captures it alongside the survey responses.
+
+This is useful when your client runs their own survey in Qualtrics but you want to source and screen respondents through Panel Pro. The Panel Pro survey handles targeting, screening, and qualification, then hands off qualified respondents to the Qualtrics survey with their identifying data intact.
+
+## How It Works
+
+1. A respondent completes your Panel Pro survey (or reaches a survey ending)
+2. The Redirect block sends them to your Qualtrics survey URL
+3. Panel Pro appends identifying data as query string parameters (e.g., `?respondentId=R123&participantId=P456`)
+4. Qualtrics reads those parameters and stores them as Embedded Data fields alongside the respondent's Qualtrics responses
+
+The result: every Qualtrics response is linked back to a specific Panel Pro respondent, so you can match data across both platforms.
+
+## Step 1: Get Your Qualtrics Survey URL
+
+In Qualtrics, open the survey you want respondents to land on. Navigate to **Distributions** and grab the **Anonymous Link**. It will look something like:
+
+```
+https://yourcollege.qualtrics.com/jfe/form/SV_abc123def456
+```
+
+This is the base URL you'll paste into Panel Pro's Redirect block.
+
+## Step 2: Configure Embedded Data in Qualtrics
+
+Before Qualtrics can capture the URL parameters Panel Pro sends, you need to tell Qualtrics to expect them. This is done through **Embedded Data** in the Qualtrics Survey Flow.
+
+1. Open your Qualtrics survey and click **Survey Flow** in the left sidebar
+2. Click **Add a New Element Here** and select **Embedded Data**
+3. Add a field for each parameter you plan to send from Panel Pro. The field names must match the query parameter names **exactly** (they are case-sensitive):
+   - `respondentId` — if you enable **Attach Respondent Id** in Panel Pro
+   - `participantId` — if you enable **Attach Panelist Id** in Panel Pro
+   - `labels` — if you enable **Attach Labels** in Panel Pro
+4. Leave the value blank for each field — Qualtrics will populate it automatically from the URL
+5. **Move the Embedded Data element to the very top of the survey flow**, above all question blocks. Qualtrics processes the flow top-to-bottom, and the fields must be initialized before any questions reference them.
+6. Click **Apply** to save
+
+<Warning>
+Field names in Qualtrics are case-sensitive. `respondentId` and `RespondentId` are treated as different fields. Make sure the field names match the exact parameter names listed above.
+</Warning>
+
+## Step 3: Add a Redirect Block in Panel Pro
+
+In your Panel Pro survey designer:
+
+1. Create a **Survey Ending** block (or use the default one)
+2. Inside the survey ending, add a **Redirect** block
+3. Paste your Qualtrics survey URL into the URL field (e.g., `qualtrics.com/jfe/form/SV_abc123def456`)
+4. In the **Redirect to URL Settings** panel on the right, enable the toggles for the data you want to pass:
+   - **Attach Respondent Id** — Appends `?respondentId=R1234567890123` to the URL
+   - **Attach Panelist Id** — Appends `?participantId=P1234567890123` to the URL
+   - **Attach Labels** — Appends `?labels=employed,male` to the URL (comma-separated)
+
+When a respondent reaches this block, Panel Pro constructs the full redirect URL with the enabled parameters and sends the respondent to Qualtrics. For example, with all three toggles enabled, the respondent would be redirected to:
+
+```
+https://qualtrics.com/jfe/form/SV_abc123def456?respondentId=R1234567890123&participantId=P1234567890123&labels=employed,male
+```
+
+<Tip>
+If you only want to redirect **qualified** respondents to Qualtrics, add a condition to the Redirect block (enable **Redirect Logic** in the settings) or place it inside a survey ending that only qualified respondents are routed to.
+</Tip>
+
+## Step 4: Verify the Integration
+
+Before distributing your survey, test the full flow end-to-end:
+
+1. **Preview your Panel Pro survey** and complete it through to the ending
+2. Confirm you are redirected to the Qualtrics survey and that the URL contains the expected query parameters
+3. Complete the Qualtrics survey
+4. In Qualtrics, go to **Data & Analysis** and check that the Embedded Data columns (`respondentId`, `participantId`, `labels`) are populated with the values from the URL
+
+If the Embedded Data columns are blank, double-check that:
+- The field names in the Qualtrics Survey Flow match the URL parameter names exactly (case-sensitive)
+- The Embedded Data element is at the **top** of the Survey Flow, above all question blocks
+- The Redirect block toggles are enabled in Panel Pro
+
+## Using the Data in Qualtrics
+
+Once the integration is working, the Embedded Data fields are available throughout the Qualtrics survey:
+
+- **Piped Text** — Reference values in question text using `${e://Field/respondentId}`
+- **Display Logic** — Show or hide questions based on label values
+- **Data Export** — The fields appear as columns in your Qualtrics export, so you can join the data with Panel Pro exports using the respondent or panelist ID
+
+## Common Scenarios
+
+### Quantitative Research Teams
+
+Quant teams often have established survey workflows built around Qualtrics — complex question logic, custom scripting, statistical analysis pipelines, and reporting templates that are tightly coupled to the platform. Rebuilding these in a different tool isn't practical, and there's no reason to. Panel Pro supports forwarding to Qualtrics so that quant teams can continue running their surveys in the tool they already know while using Panel Pro for what it does best: sourcing, targeting, and managing panelists.
+
+In a typical setup, the quant team designs and maintains their survey in Qualtrics. A Panel Pro survey acts as a lightweight front door — it screens and qualifies respondents using Panel Pro's targeting and eligibility features, then redirects qualified respondents into the Qualtrics survey. The respondent ID and panelist ID travel with the redirect, so the quant team can link Qualtrics responses back to Panel Pro panelist records for downstream analysis or follow-up recruitment.
+
+This lets each tool handle its strength: Panel Pro manages the panel and respondent pipeline, Qualtrics handles the survey instrument and data collection.
+
+### Screen in Panel Pro, Survey in Qualtrics
+
+Use Panel Pro for initial screening (demographics, eligibility, quality checks), then redirect qualified respondents to a detailed Qualtrics survey. This lets you leverage Panel Pro's targeting and screening features while running the substantive research survey in Qualtrics.
+
+1. Build your screening questions in Panel Pro with Disqualify blocks and early termination
+2. Add a Survey Ending for qualified respondents with a Redirect block pointing to Qualtrics
+3. Add a separate Survey Ending for disqualified respondents with a closing statement (no redirect)
+
+### Multiple Qualtrics Surveys by Label
+
+Use Label blocks in your Panel Pro survey to tag respondents based on their answers, then use conditional Redirect blocks in the survey ending to route different groups to different Qualtrics surveys.
+
+For example, route respondents labeled "manager" to one Qualtrics survey and respondents labeled "individual-contributor" to a different one.
