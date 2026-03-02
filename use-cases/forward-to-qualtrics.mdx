@@ -28,9 +28,11 @@ https://yourcollege.qualtrics.com/jfe/form/SV_abc123def456
 
 This is the base URL you'll paste into Panel Pro's Redirect block.
 
-## Step 2: Configure Embedded Data in Qualtrics
+## Step 2: Configure Embedded Data in Qualtrics (Optional)
 
-Before Qualtrics can capture the URL parameters Panel Pro sends, you need to tell Qualtrics to expect them. This is done through **Embedded Data** in the Qualtrics Survey Flow.
+This step is only necessary if you want Qualtrics to capture the URL parameters that Panel Pro sends (respondent ID, panelist ID, labels). If you just need to redirect respondents to a Qualtrics survey without passing data, skip to [Step 3](#step-3-add-a-redirect-block-in-panel-pro).
+
+To capture the parameters, you need to tell Qualtrics to expect them. This is done through **Embedded Data** in the Qualtrics Survey Flow.
 
 1. Open your Qualtrics survey and click **Survey Flow** in the left sidebar
 2. Click **Add a New Element Here** and select **Embedded Data**
