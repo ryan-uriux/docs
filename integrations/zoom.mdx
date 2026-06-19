@@ -1,0 +1,75 @@
+---
+title: "Connect Zoom"
+description: "Connect your Zoom account so Panel Pro automatically creates meeting links for your virtual study sessions."
+icon: "video"
+---
+
+# Connect Zoom
+
+Panel Pro's **Zoom integration** lets you connect your Zoom account so that virtual study sessions get a Zoom meeting created automatically. When you schedule a session as a **Zoom Meeting**, Panel Pro creates the meeting on your Zoom account, generates the join link, and includes it in the participant's confirmation email and calendar invite — so you never have to create meetings by hand or paste links into each session.
+
+Each Zoom Meeting session gives you two links: a **Host Link** to start the meeting and a **Participant Link** that participants use to join. Canceling or deleting a session removes the corresponding Zoom meeting for you.
+
+## How It Works
+
+1. You connect your Zoom account once, from your account settings
+2. When creating a session, you choose **Zoom Meeting** as the session type
+3. Panel Pro creates a scheduled meeting on your Zoom account and stores the host and participant links
+4. The **Participant Link** is included in each scheduled participant's confirmation email and calendar invite
+5. You use the **Host Link** to start the meeting at session time
+6. If you cancel or delete the session, Panel Pro deletes the Zoom meeting automatically
+
+## Connecting Your Zoom Account
+
+1. In Panel Pro, open the account menu and go to **Manage Account**
+2. Scroll to the **Connections** section
+3. On the **Zoom** row, click **Connect**
+4. You'll be redirected to Zoom to sign in and authorize Panel Pro
+5. After you approve, Zoom returns you to **Manage Account** and you'll see a confirmation that the integration connected successfully
+
+<Note>
+Connecting and disconnecting integrations requires the **Creator** role. You can connect **only one meeting integration at a time** — disconnect your current one before connecting a different account.
+</Note>
+
+## Using Zoom with Sessions
+
+When you create a session in a study, the **Session Type** field offers two options:
+
+- **Zoom Meeting** *(default)* — Panel Pro creates a Zoom meeting automatically for the session
+- **Custom Location** — You provide a physical address or your own meeting link in the **Location** field
+
+When you choose **Zoom Meeting** and save the session, Panel Pro creates the meeting on your connected Zoom account. On the session page you'll see two copyable links:
+
+- **Host Link** — Use this to start the meeting as the host. Keep it private; do not share it with participants.
+- **Participant Link** — The link participants use to join. This is automatically included in each scheduled participant's confirmation email and calendar invite, so you usually don't need to share it manually.
+
+<Warning>
+Creating a **Zoom Meeting** session requires a connected Zoom account. If no account is connected, the session won't be created and Panel Pro will prompt you to connect one. Connect your Zoom account first, then create the session.
+</Warning>
+
+## Managing and Canceling Sessions
+
+When you **cancel or delete** a Zoom Meeting session, Panel Pro automatically deletes the meeting from your Zoom account — there's nothing to clean up on the Zoom side.
+
+Meetings are created on the Zoom account of the person who connected the integration, so that user should remain the meeting host (or share the Host Link with whoever is running the session).
+
+## Disconnecting Zoom
+
+1. Go to **Manage Account → Connections**
+2. On the **Zoom** row, click **Disconnect**
+
+Meetings that were already created stay on your Zoom account and continue to work, but **new Zoom Meeting sessions will fail until you reconnect a Zoom account**.
+
+<Tip>
+If you ever see an **"Unable to create meeting"** error when creating a session, your Zoom connection may have expired or been revoked on Zoom's side. Go to **Manage Account → Connections**, disconnect Zoom, and connect again.
+</Tip>
+
+## Troubleshooting
+
+| Message | What it means | How to fix |
+| --- | --- | --- |
+| **Virtual sessions require a connected meeting integration** | You tried to create a Zoom Meeting session without a connected Zoom account. | Click **Connect Now** (or go to **Manage Account → Connections**) and connect Zoom, then create the session. |
+| **Unable to create meeting** | Panel Pro couldn't reach Zoom — usually an expired or revoked connection. | Go to **Manage Account → Connections**, disconnect Zoom, and reconnect. |
+| **You can only have one meeting integration enabled at a time** | A meeting integration is already connected. | Disconnect the existing one before connecting a different account. |
+
+For anything else, reach out to [support@uriux.com](mailto:support@uriux.com).

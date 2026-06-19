@@ -27,6 +27,12 @@
         ]
       },
       {
+        "group": "Integrations",
+        "pages": [
+          "integrations/zoom"
+        ]
+      },
+      {
         "group": "Platform",
         "pages": [
           "clients/panels",

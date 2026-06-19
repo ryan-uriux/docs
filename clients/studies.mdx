@@ -25,13 +25,15 @@ When setting up sessions, you'll configure:
 
 - **Duration** — How long the session will last
 - **Host** — The team member running the session
-- **Location** — Where the session takes place (a video call link, physical address, etc.)
+- **Session Type** — How the session is held:
+  - **Zoom Meeting** *(default)* — Panel Pro automatically creates a Zoom meeting for the session. This requires a connected Zoom account. See [Connect Zoom](/integrations/zoom) for setup and details.
+  - **Custom Location** — You provide the physical address or your own meeting link in the **Location** field.
 - **Max participants** — How many participants can be scheduled into this session
 - **Instructions** — Any additional details participants need to know before the session
 
 ## Session Defaults
 
-Since most sessions in a study share the same host, duration, location, and instructions, Panel Pro lets you save **session defaults** so you don't have to re-enter that information every time you create a new session.
+Since most sessions in a study share the same host, duration, session type, and instructions, Panel Pro lets you save **session defaults** so you don't have to re-enter that information every time you create a new session.
 
 When you create your first session, **Save as Session Defaults** is checked by default. This saves your settings as the study's defaults, so every session you create after that will be pre-filled with those values. You can always override the defaults on individual sessions as needed — for example, changing the host for a specific time slot.
 
